@@ -1,0 +1,54 @@
+# 📝 Markdown Cheat Sheet (Jupyter Notebook)
+
+## 🔹 Headings
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+---
+
+## 🔹 Text Formatting
+**Bold** → `**Bold**`  
+*Italic* → `*Italic*`  
+***Bold Italic*** → `***Bold Italic***`  
+~~Strikethrough~~ → `~~Strikethrough~~`  
+`Inline code` → `` `Inline code` ``
+
+---
+
+## 🔹 Lists
+
+### • Unordered List
+- Item 1  
+- Item 2  
+  - Subitem
+
+### • Ordered List
+1. First  
+2. Second  
+   1. Subitem
+
+---
+
+## 🔹 Links and Images
+
+[Google](https://www.google.com)  
+`[Google](https://www.google.com)`
+
+![Alt text](https://via.placeholder.com/80)  
+`![Alt text](https://via.placeholder.com/80)`
+
+---
+
+## 🔹 Code Blocks
+
+Inline: `print("Hello")`
+
+Block:
+
+```python
+def greet():
+    print("Hello!")
