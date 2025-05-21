@@ -1,9 +1,9 @@
 def fact(n):
-    result=1
-  for i in range(2,n+1):
-    result *=1 
-   return result
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
 
-number=int(input( 'Enter number'))
-print(f'factiol of a {number} using for loop: {fact(n)}')
+number = int(input('Enter number: '))
+print(f'factorial of {number} using for loop: {fact(number)}')
    
