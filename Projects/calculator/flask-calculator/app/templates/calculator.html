@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/calculator.css') }}">
+</head>
+<body class="min-h-screen transition-colors duration-300">
+    <div class="container">
+        <!-- Theme Toggle -->
+        <div class="theme-toggle-container">
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider">
+                    <span class="icon sun">☀️</span>
+                    <span class="icon moon">🌙</span>
+                </span>
+            </label>
+        </div>
+
+        <!-- Calculator -->
+        <div class="calculator" id="calculator">
+            <!-- Display -->
+            <div class="display">
+                <div class="history" id="history"></div>
+                <div class="current" id="current-display">0</div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="buttons">
+                <!-- Row 1 - Functions -->
+                <button class="btn btn-function" onclick="clearCalc()">AC</button>
+                <button class="btn btn-function" onclick="operation('log')">log</button>
+                <button class="btn btn-function" onclick="operation('percent')">%</button>
+                <button class="btn btn-operator" onclick="inputOperator('÷')">÷</button>
+                
+                <!-- Row 2 -->
+                <button class="btn btn-number" onclick="inputNumber('7')">7</button>
+                <button class="btn btn-number" onclick="inputNumber('8')">8</button>
+                <button class="btn btn-number" onclick="inputNumber('9')">9</button>
+                <button class="btn btn-operator" onclick="inputOperator('×')">×</button>
+                
+                <!-- Row 3 -->
+                <button class="btn btn-number" onclick="inputNumber('4')">4</button>
+                <button class="btn btn-number" onclick="inputNumber('5')">5</button>
+                <button class="btn btn-number" onclick="inputNumber('6')">6</button>
+                <button class="btn btn-operator" onclick="inputOperator('-')">-</button>
+                
+                <!-- Row 4 -->
+                <button class="btn btn-number" onclick="inputNumber('1')">1</button>
+                <button class="btn btn-number" onclick="inputNumber('2')">2</button>
+                <button class="btn btn-number" onclick="inputNumber('3')">3</button>
+                <button class="btn btn-operator" onclick="inputOperator('+')">+</button>
+                
+                <!-- Row 5 -->
+                <button class="btn btn-number btn-zero" onclick="inputNumber('0')">0</button>
+                <button class="btn btn-number" onclick="inputNumber('.')">.</button>
+                <button class="btn btn-equals" onclick="calculate()">=</button>
+                
+                <!-- Scientific Functions Row -->
+                <button class="btn btn-scientific" onclick="operation('pi')">π</button>
+                <button class="btn btn-scientific" onclick="operation('exp')">e^x</button>
+                <button class="btn btn-scientific" onclick="operation('sqrt')">√x</button>
+                <button class="btn btn-scientific" onclick="operation('factorial')">x!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
+</body>
+</html>
