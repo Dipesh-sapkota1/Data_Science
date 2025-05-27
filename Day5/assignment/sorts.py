@@ -1,10 +1,13 @@
-lists = [1, 2, 3, 4, 2, 3, 5, 6, 1, 7, 3]
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
-#bubble sort
-for index in range(len(lists) ):
 
-    if lists[index] > lists[index + 1]:
-        lists[index] = lists[index + 1]
+numbers = [64, 34, 25, 12, 22, 11, 90]
+print("Original array:", numbers)
 
-print(lists)
-
+bubble_sort(numbers)
+print("Sorted array:", numbers)
