@@ -95,3 +95,5 @@ def dis_amt(f):
 
 
 print(f"Your fare is: {tic_calc( distance,train_class,)}$")
+
+ 
