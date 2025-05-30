@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Stack Data Structure GUI</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗃️ Stack Data Structure</h1>
+            <p>Fixed-size stack with overflow/underflow protection - LIFO (Last In, First Out)</p>
+        </div>
+
+        <div class="initialization-section">
+            <h3>Initialize Stack</h3>
+            <div class="init-controls">
+                <div class="init-input-group">
+                    <label for="stackSize">Stack Size (1-100):</label>
+                    <input type="number" id="stackSize" min="1" max="100" value="5" placeholder="Enter stack size">
+                </div>
+                <button class="btn-init" onclick="initializeStack()">
+                    🔧 Initialize Stack
+                </button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="controls">
+                <h3>Stack Operations</h3>
+                
+                <div class="stack-info-card">
+                    <div class="info-row">
+                        <span class="info-label">Status:</span>
+                        <span class="info-value" id="stackStatus">Not Initialized</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Current Size:</span>
+                        <span class="info-value" id="currentSize">0</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Capacity:</span>
+                        <span class="info-value" id="capacity">0</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Available Space:</span>
+                        <span class="info-value" id="availableSpace">0</span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="itemInput">Enter Item:</label>
+                    <input type="text" id="itemInput" placeholder="Type something..." maxlength="20">
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-push" onclick="pushItem()" disabled>
+                        ⬆️ Push
+                    </button>
+                    <button class="btn btn-pop" onclick="popItem()" disabled>
+                        ⬇️ Pop
+                    </button>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-peek" onclick="peekItem()" disabled>
+                        👁️ Peek
+                    </button>
+                    <button class="btn btn-display" onclick="displayStack()" disabled>
+                        📋 Display
+                    </button>
+                </div>
+
+                <div id="message" class="message" style="display: none;"></div>
+            </div>
+
+            <div class="stack-visualization">
+                <div class="stack-header">
+                    <h3>Stack Visualization</h3>
+                    <div class="capacity-indicator" id="capacityIndicator">
+                        Not Initialized
+                    </div>
+                </div>
+                
+                <div class="array-container">
+                    <div class="array-header">Array Representation</div>
+                    <div class="array-visualization" id="arrayVisualization">
+                        <div style="text-align: center; color: #999; padding: 20px;">
+                            Initialize stack to see array visualization
+                        </div>
+                    </div>
+                    <div class="top-pointer" id="topPointer">TOP = -1</div>
+                </div>
+
+                <div class="stack-list">
+                    <h4>Stack Contents (Top to Bottom)</h4>
+                    <div id="stackContainer">
+                        <div class="stack-empty">
+                            Stack not initialized<br>
+                            <small>Initialize the stack to get started!</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                 <script src="{{ url_for('static', filename='script.js') }}"></script>
+            </body>
+            </html>
